@@ -12,11 +12,11 @@ import ImageWithFallback from "@/components/image-with-fallback"
 export default function CartPage() {
   const { state, dispatch } = useCart()
 
-  const updateQuantity = (id: string, quantity: number) => {
+  const updateQuantity = (id, quantity) => {
     dispatch({ type: "UPDATE_QUANTITY", payload: { id, quantity } })
   }
 
-  const removeItem = (id: string) => {
+  const removeItem = (id) => {
     dispatch({ type: "REMOVE_ITEM", payload: id })
   }
 

@@ -97,7 +97,7 @@ export default function Navbar() {
             <span className="text-xs text-gray-600 font-poppins">Home</span>
           </Link>
           <Link href="/shop" className="flex flex-col items-center py-2 px-1">
-            <div className="w-6 h-6 mb-1">🛍️</div>
+            <ShoppingCart className="h-6 w-6 mb-1 text-gray-600" />
             <span className="text-xs text-gray-600 font-poppins">Shop</span>
           </Link>
           <Link href="/cart" className="flex flex-col items-center py-2 px-1 relative">

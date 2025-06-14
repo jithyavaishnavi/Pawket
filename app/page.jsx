@@ -647,6 +647,182 @@ export default async function Home() {
               </div>
             </div>
           </div>
+
+          {/* COMPANY */}
+          <div>
+            <h3 className="font-semibold mb-6 font-montserrat text-gray-900 text-base tracking-wide">COMPANY</h3>
+            <ul className="space-y-4 text-gray-600 font-poppins text-base">
+              <li>
+                <Link href="/about" className="hover:text-gray-900 transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/features" className="hover:text-gray-900 transition-colors">
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link href="/works" className="hover:text-gray-900 transition-colors">
+                  Works
+                </Link>
+              </li>
+              <li>
+                <Link href="/career" className="hover:text-gray-900 transition-colors">
+                  Career
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* HELP */}
+          <div>
+            <h3 className="font-semibold mb-6 font-montserrat text-gray-900 text-base tracking-wide">HELP</h3>
+            <ul className="space-y-4 text-gray-600 font-poppins text-base">
+              <li>
+                <Link href="/support" className="hover:text-gray-900 transition-colors">
+                  Customer Support
+                </Link>
+              </li>
+              <li>
+                <Link href="/delivery" className="hover:text-gray-900 transition-colors">
+                  Delivery Details
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-gray-900 transition-colors">
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="hover:text-gray-900 transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* FAQ */}
+          <div>
+            <h3 className="font-semibold mb-6 font-montserrat text-gray-900 text-base tracking-wide">FAQ</h3>
+            <ul className="space-y-4 text-gray-600 font-poppins text-base">
+              <li>
+                <Link href="/account" className="hover:text-gray-900 transition-colors">
+                  Account
+                </Link>
+              </li>
+              <li>
+                <Link href="/deliveries" className="hover:text-gray-900 transition-colors">
+                  Manage Deliveries
+                </Link>
+              </li>
+              <li>
+                <Link href="/orders" className="hover:text-gray-900 transition-colors">
+                  Orders
+                </Link>
+              </li>
+              <li>
+                <Link href="/payments" className="hover:text-gray-900 transition-colors">
+                  Payments
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* RESOURCES */}
+          <div>
+            <h3 className="font-semibold mb-6 font-montserrat text-gray-900 text-base tracking-wide">RESOURCES</h3>
+            <ul className="space-y-4 text-gray-600 font-poppins text-base">
+              <li>
+                <Link href="/ebooks" className="hover:text-gray-900 transition-colors">
+                  Free eBooks
+                </Link>
+              </li>
+              <li>
+                <Link href="/tutorial" className="hover:text-gray-900 transition-colors">
+                  Development Tutorial
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-gray-900 transition-colors">
+                  How to - Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/youtube" className="hover:text-gray-900 transition-colors">
+                  Youtube Playlist
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-500 font-poppins text-base mb-4 md:mb-0">Pawket ©2025, All Rights Reserved</p>
+            <div className="flex space-x-3">
+              {/* Visa */}
+              <div className="w-12 h-8 bg-white border border-gray-200 rounded flex items-center justify-center shadow-sm">
+                <svg className="w-8 h-5" viewBox="0 0 40 24" fill="none">
+                  <rect width="40" height="24" rx="4" fill="white" />
+                  <path
+                    d="M16.283 7.2h-2.433l-1.517 9.6h2.433l1.517-9.6zm7.45 6.133c.01-2.533-3.5-2.673-3.475-3.8.008-.343.333-.708 1.05-.8.35-.045 1.317-.08 2.417.425l.433-2.017c-.583-.217-1.333-.425-2.267-.425-2.4 0-4.083 1.275-4.1 3.1-.017 1.35 1.2 2.1 2.117 2.55.942.458 1.258.75 1.25 1.158-.008.625-.75.9-1.442.908-1.208.017-1.908-.325-2.467-.583l-.433 2.033c.558.258 1.592.483 2.667.5 2.55 0 4.217-1.258 4.25-3.208v-.241zm6.5-6.133h-1.883c-.583 0-1.017.167-1.275.775l-3.6 8.825h2.55s.417-1.158.508-1.408h3.125c.075.342.3 1.408.3 1.408h2.25l-1.975-9.6zm-3.058 6.058c.2-.533 1.017-2.708 1.017-2.708s.208-.558.333-.917l.175.825s.483 2.342.583 2.8h-2.108zm-13.308-6.058l-2.375 6.567-.25-1.267c-.433-1.475-1.783-3.067-3.292-3.867l2.175 8.167h2.575l3.833-9.6h-2.666z"
+                    fill="#1434CB"
+                  />
+                </svg>
+              </div>
+
+              {/* Mastercard */}
+              <div className="w-12 h-8 bg-white border border-gray-200 rounded flex items-center justify-center shadow-sm">
+                <svg className="w-8 h-5" viewBox="0 0 40 24" fill="none">
+                  <rect width="40" height="24" rx="4" fill="white" />
+                  <circle cx="15" cy="12" r="6" fill="#EB001B" />
+                  <circle cx="25" cy="12" r="6" fill="#F79E1B" />
+                  <path
+                    d="M20 7.5c1.5 1.2 2.5 3 2.5 4.5s-2 4.5-4.5 4.5h-2l-.5 2h-2l1.5-7.5zm2.5 2l-.5 2.5h2c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5h-1.5zm-2 4l-.5 2.5h2c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5h-1z"
+                    fill="#FF5F00"
+                  />
+                </svg>
+              </div>
+
+              {/* PayPal */}
+              <div className="w-12 h-8 bg-white border border-gray-200 rounded flex items-center justify-center shadow-sm">
+                <svg className="w-8 h-5" viewBox="0 0 40 24" fill="none">
+                  <rect width="40" height="24" rx="4" fill="white" />
+                  <path
+                    d="M12.5 7h4.5c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5h-2l-.5 2h-2l1.5-7.5zm2.5 2l-.5 2.5h2c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5h-1.5zm-2 4l-.5 2.5h2c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5h-1z"
+                    fill="#003087"
+                  />
+                  <path
+                    d="M18 11h4c2 0 3.5 1.5 3.5 3.5s-1.5 3.5-3.5 3.5h-1.5l-.5 2h-1.5l1.5-7.5zm2 1.5l-.5 2h1.5c.6 0 1-.4 1-1s-.4-1-1-1h-1zm-1.5 3l-.5 2h1.5c.6 0 1-.4 1-1s-.4-1-1-1h-1z"
+                    fill="#009CDE"
+                  />
+                </svg>
+              </div>
+
+              {/* Apple Pay */}
+              <div className="w-12 h-8 bg-white border border-gray-200 rounded flex items-center justify-center shadow-sm">
+                <svg className="w-8 h-5" viewBox="0 0 40 24" fill="none">
+                  <rect width="40" height="24" rx="4" fill="white" />
+                  <path
+                    d="M16.5 8.5c-.3-.4-.8-.7-1.3-.6-.1.5.1 1 .4 1.3.3.4.8.6 1.2.6.1-.5-.1-1-.3-1.3zm.4 1.5c-.7 0-1.3.4-1.6.4s-.9-.4-1.5-.4c-.8 0-1.5.4-1.9 1.1-.8 1.4-.2 3.5.6 4.6.4.5.9 1.1 1.5 1.1s.8-.4 1.5-.4.9.4 1.5.4 1-.6 1.4-1.1c.5-.6.7-1.2.7-1.2s-1.4-.5-1.4-2c0-1.2 1-1.8 1-1.8s-.6-1-1.5-1.1c-.1-.1-.2-.1-.3-.1z"
+                    fill="black"
+                  />
+                  <path d="M25 8h1.5v8H25v-3h-1.5v3H22V8h1.5v2.5H25V8z" fill="black" />
+                </svg>
+              </div>
+
+              {/* Google Pay */}
+              <div className="w-12 h-8 bg-white border border-gray-200 rounded flex items-center justify-center shadow-sm">
+                <svg className="w-8 h-5" viewBox="0 0 40 24" fill="none">
+                  <rect width="40" height="24" rx="4" fill="white" />
+                  <path
+                    d="M20 9v2.5h3.5c-.2 1-1.2 2.5-3.5 2.5-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8c1.2 0 2 .5 2.5 1l2-2c-1.3-1.2-3-2-4.5-2-3.6 0-6.5 2.9-6.5 6.5s2.9 6.5 6.5 6.5c3.8 0 6.3-2.7 6.3-6.5 0-.4 0-.8-.1-1.2H20z"
+                    fill="#4285F4"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

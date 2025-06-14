@@ -4,19 +4,6 @@ import { useState } from "react"
 import Image from "next/image"
 import { ImageOff } from "lucide-react"
 
-interface ImageWithFallbackProps {
-  src: string
-  alt: string
-  width?: number
-  height?: number
-  fill?: boolean
-  className?: string
-  category?: string
-  priority?: boolean
-  sizes?: string
-  quality?: number
-}
-
 // Category-specific fallback images
 const categoryFallbacks = {
   food: "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=400&h=400&fit=crop&crop=center",
@@ -28,7 +15,7 @@ const categoryFallbacks = {
 }
 
 // Generate SVG placeholder
-const generatePlaceholderSVG = (width: number, height: number, category?: string) => {
+const generatePlaceholderSVG = (width, height, category) => {
   const categoryColors = {
     food: "#f97316", // orange
     toys: "#10b981", // green
@@ -38,7 +25,7 @@ const generatePlaceholderSVG = (width: number, height: number, category?: string
     default: "#6b7280", // gray
   }
 
-  const color = categoryColors[category as keyof typeof categoryColors] || categoryColors.default
+  const color = categoryColors[category] || categoryColors.default
   const categoryIcons = {
     food: "🍖",
     toys: "🎾",
@@ -48,7 +35,7 @@ const generatePlaceholderSVG = (width: number, height: number, category?: string
     default: "🐾",
   }
 
-  const icon = categoryIcons[category as keyof typeof categoryIcons] || categoryIcons.default
+  const icon = categoryIcons[category] || categoryIcons.default
 
   return `data:image/svg+xml;base64,${btoa(`
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +58,7 @@ export default function ImageWithFallback({
   priority = false,
   sizes,
   quality = 75,
-}: ImageWithFallbackProps) {
+}) {
   const [imageError, setImageError] = useState(false)
   const [fallbackError, setFallbackError] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
@@ -136,7 +123,7 @@ export default function ImageWithFallback({
 
   // Show fallback image if original failed
   if (imageError && !fallbackError) {
-    const fallbackSrc = categoryFallbacks[category as keyof typeof categoryFallbacks] || categoryFallbacks.default
+    const fallbackSrc = categoryFallbacks[category] || categoryFallbacks.default
 
     return (
       <div className="relative">

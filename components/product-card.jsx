@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -10,27 +8,11 @@ import { useCart } from "@/components/cart-context"
 import { useToast } from "@/hooks/use-toast"
 import ImageWithFallback from "@/components/image-with-fallback"
 
-interface Product {
-  _id: string
-  name: string
-  price: number
-  originalPrice?: number
-  image: string
-  category: string
-  rating: number
-  reviews: number
-  inStock: boolean
-}
-
-interface ProductCardProps {
-  product: Product
-}
-
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product }) {
   const { dispatch } = useCart()
   const { toast } = useToast()
 
-  const handleAddToCart = (e: React.MouseEvent) => {
+  const handleAddToCart = (e) => {
     e.preventDefault()
     e.stopPropagation()
 

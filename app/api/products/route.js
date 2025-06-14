@@ -21,7 +21,7 @@ export async function GET() {
   }
 }
 
-export async function POST(request: Request) {
+export async function POST(request) {
   try {
     const clientPromise = await getMongoClient()
     const client = await clientPromise
