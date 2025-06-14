@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -76,7 +78,7 @@ export default function AdminPage() {
   })
   const { toast } = useToast()
 
-  const handleAddProduct = (e) => {
+  const handleAddProduct = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle product addition here
     toast({
@@ -93,7 +95,7 @@ export default function AdminPage() {
     })
   }
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setNewProduct({
       ...newProduct,
       [e.target.name]: e.target.value,

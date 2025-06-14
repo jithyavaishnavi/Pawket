@@ -1,14 +1,40 @@
 "use client"
 
+import type React from "react"
 import { createContext, useContext, useReducer, useEffect } from "react"
 
-const CartContext = createContext(null)
+interface CartItem {
+  id: string
+  name: string
+  price: number
+  image: string
+  quantity: number
+  category: string
+}
 
-function cartReducer(state, action) {
+interface CartState {
+  items: CartItem[]
+  total: number
+  itemCount: number
+}
+
+type CartAction =
+  | { type: "ADD_ITEM"; payload: Omit<CartItem, "quantity"> }
+  | { type: "REMOVE_ITEM"; payload: string }
+  | { type: "UPDATE_QUANTITY"; payload: { id: string; quantity: number } }
+  | { type: "CLEAR_CART" }
+  | { type: "LOAD_CART"; payload: CartItem[] }
+
+const CartContext = createContext<{
+  state: CartState
+  dispatch: React.Dispatch<CartAction>
+} | null>(null)
+
+function cartReducer(state: CartState, action: CartAction): CartState {
   switch (action.type) {
     case "ADD_ITEM": {
       const existingItem = state.items.find((item) => item.id === action.payload.id)
-      let newItems
+      let newItems: CartItem[]
 
       if (existingItem) {
         newItems = state.items.map((item) =>
@@ -59,7 +85,7 @@ function cartReducer(state, action) {
   }
 }
 
-export function CartProvider({ children }) {
+export function CartProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, {
     items: [],
     total: 0,

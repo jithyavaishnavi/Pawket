@@ -2,6 +2,8 @@
 
 import Link from "next/link"
 
+import type React from "react"
+
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -21,7 +23,7 @@ export default function ContactPage() {
   })
   const { toast } = useToast()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission here
     toast({
@@ -31,7 +33,7 @@ export default function ContactPage() {
     setFormData({ name: "", email: "", subject: "", message: "" })
   }
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,

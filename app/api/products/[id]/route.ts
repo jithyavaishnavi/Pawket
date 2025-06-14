@@ -7,7 +7,7 @@ async function getMongoClient() {
   return { MongoClient, ObjectId, clientPromise: clientPromise.default }
 }
 
-export async function GET(request, { params }) {
+export async function GET(request: Request, { params }: { params: { id: string } }) {
   try {
     const { ObjectId, clientPromise } = await getMongoClient()
     const client = await clientPromise
@@ -31,7 +31,7 @@ export async function GET(request, { params }) {
   }
 }
 
-export async function PUT(request, { params }) {
+export async function PUT(request: Request, { params }: { params: { id: string } }) {
   try {
     const { ObjectId, clientPromise } = await getMongoClient()
     const client = await clientPromise
@@ -61,7 +61,7 @@ export async function PUT(request, { params }) {
   }
 }
 
-export async function DELETE(request, { params }) {
+export async function DELETE(request: Request, { params }: { params: { id: string } }) {
   try {
     const { ObjectId, clientPromise } = await getMongoClient()
     const client = await clientPromise
