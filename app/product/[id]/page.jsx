@@ -66,13 +66,13 @@ export default function ProductDetailPage() {
 
   const getFallbackImage = (category) => {
     switch (category) {
-      case "Food": // Changed from 'food' to 'Food' to match seed-database.js
+      case "Food":
         return "/placeholder.svg?height=400&width=400&text=Food+Product"
-      case "Toys": // Changed from 'toys' to 'Toys'
+      case "Toys":
         return "/placeholder.svg?height=400&width=400&text=Toy+Product"
-      case "Grooming": // Changed from 'grooming' to 'Grooming'
+      case "Grooming":
         return "/placeholder.svg?height=400&width=400&text=Grooming+Product"
-      case "Accessories": // Changed from 'accessories' to 'Accessories'
+      case "Accessories":
         return "/placeholder.svg?height=400&width=400&text=Accessory+Product"
       default:
         return "/placeholder.svg?height=400&width=400&text=Product"
@@ -83,13 +83,13 @@ export default function ProductDetailPage() {
     <div className="container mx-auto p-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         <div className="flex justify-center items-center bg-gray-100 rounded-lg p-8">
-          <ImageWithFallback\
-            src={product.image || "/placeholder.svg\"} {/* Changed from product.imageUrl to product.image */}\
-            fallbackSrc={getFallbackImage(product.category)}\
-            alt={product.name}\
-            width={400}\
-            height={400}\
-            className=\"object-contain rounded-lg"
+          <ImageWithFallback
+            src={product.image || "/placeholder.svg"}
+            fallbackSrc={getFallbackImage(product.category)}
+            alt={product.name}
+            width={400}
+            height={400}
+            className="object-contain rounded-lg"
           />
         </div>
 
@@ -164,5 +164,5 @@ export default function ProductDetailPage() {
         </div>
       </div>
     </div>
-  )\
+  )
 }
