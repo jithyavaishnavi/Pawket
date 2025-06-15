@@ -9,9 +9,9 @@ import Link from "next/link"
 
 export default function CartPage() {
   // Correctly destructure cartItems from useCart()
-  const { cart, removeFromCart, updateQuantity } = useCart()
+  const { cartItems, removeFromCart, updateQuantity } = useCart()
 
-  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const shipping = 5.0 // Flat rate shipping
   const total = subtotal + shipping
 
@@ -19,7 +19,7 @@ export default function CartPage() {
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">Your Shopping Cart</h1>
 
-      {cart.length === 0 ? (
+      {cartItems.length === 0 ? (
         <Card className="w-full max-w-2xl mx-auto">
           <CardContent className="p-6 text-center">
             <p className="text-lg text-gray-600 mb-4">Your cart is empty.</p>
@@ -48,7 +48,7 @@ export default function CartPage() {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {cart.map((item) => (
+                    {cartItems.map((item) => (
                       <TableRow key={item._id}>
                         <TableCell>
                           <Image
