@@ -1,4 +1,4 @@
-// Assuming a basic header structure, adjust as needed
+// Reverted to original TypeScript content (with default export)
 import Link from "next/link"
 import { ShoppingCart, Home } from "lucide-react" // Assuming these icons are used
 

@@ -1,3 +1,4 @@
+// Reverted to original TypeScript content (with default export)
 "use client"
 
 import { Input } from "@/components/ui/input"
@@ -5,8 +6,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react"
 
-export function Footer() {
-  // Changed to named export
+export default function Footer() {
   return (
     <footer className="bg-[#E99C1A] text-white py-12 px-4 md:px-6">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">

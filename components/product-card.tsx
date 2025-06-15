@@ -1,4 +1,7 @@
+// Reverted to original TypeScript content (with `imageUrl` and potential syntax error)
 "use client"
+
+import type React from "react"
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -8,11 +11,11 @@ import { useCart } from "@/components/cart-context"
 import { useToast } from "@/hooks/use-toast"
 import { ImageWithFallback } from "@/components/image-with-fallback"
 
-export function ProductCard({ product }) {
+export function ProductCard({ product }: { product: any }) {
   const { addToCart } = useCart()
   const { toast } = useToast()
 
-  const handleAddToCart = (e) => {
+  const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault() // Prevent navigating to product detail page
     e.stopPropagation() // Stop event propagation
     addToCart(product)
@@ -22,7 +25,7 @@ export function ProductCard({ product }) {
     })
   }
 
-  const getFallbackImage = (category) => {
+  const getFallbackImage = (category: string) => {
     switch (category) {
       case "Food":
         return "/placeholder.svg?height=200&width=200&text=Food"
@@ -43,7 +46,7 @@ export function ProductCard({ product }) {
         <CardContent className="p-4 flex flex-col items-center text-center">
           <div className="relative w-full h-48 mb-4 overflow-hidden rounded-md">
             <ImageWithFallback
-              src={product.image || "/placeholder.svg"}
+              src={product.imageUrl || "/placeholder.svg"} // Changed from product.imageUrl to product.image */}\
               fallbackSrc={getFallbackImage(product.category)}
               alt={product.name}
               layout="fill"
