@@ -84,7 +84,7 @@ export default async function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="relative w-[400px] h-[400px] mt-8 md:mt-0">
+            <div className="relative w-[550px] h-[550px] mt-8 md:mt-0">
               <Image
                 src="/images/hero-pets.png"
                 alt="Happy pets"
