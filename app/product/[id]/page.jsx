@@ -1,6 +1,4 @@
 "use client"
-
-import { useState, useEffect } from "react"
 import { useParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,39 +6,13 @@ import { Star } from "lucide-react"
 import { useCart } from "@/components/cart-context"
 import { useToast } from "@/hooks/use-toast"
 import { ImageWithFallback } from "@/components/image-with-fallback"
+import staticProducts from "@/lib/static-products"
 
 export default function ProductDetailPage() {
   const { id } = useParams()
-  const [product, setProduct] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const product = staticProducts.find((p) => p._id === id)
   const { addToCart } = useCart()
   const { toast } = useToast()
-
-  useEffect(() => {
-    if (id) {
-      const fetchProduct = async () => {
-        try {
-          const res = await fetch(`/api/products/${id}`)
-          if (!res.ok) {
-            throw new Error(`HTTP error! status: ${res.status}`)
-          }
-          const data = await res.json()
-          setProduct(data)
-        } catch (err) {
-          setError(err.message)
-          toast({
-            title: "Error",
-            description: `Failed to load product: ${err.message}`,
-            variant: "destructive",
-          })
-        } finally {
-          setLoading(false)
-        }
-      }
-      fetchProduct()
-    }
-  }, [id, toast])
 
   const handleAddToCart = () => {
     if (product) {
@@ -50,14 +22,6 @@ export default function ProductDetailPage() {
         description: `${product.name} has been added to your cart.`,
       })
     }
-  }
-
-  if (loading) {
-    return <div className="flex justify-center items-center h-screen text-xl">Loading product...</div>
-  }
-
-  if (error) {
-    return <div className="flex justify-center items-center h-screen text-xl text-red-500">Error: {error}</div>
   }
 
   if (!product) {

@@ -5,6 +5,8 @@ import { FeatureIcons } from "@/components/feature-icons"
 import { ProductCard } from "@/components/product-card"
 import Image from "next/image"
 import { Star } from "lucide-react"
+// Import the necessary Lucide React icons at the top of the file
+import { Utensils, ToyBrick, Scissors, Bone } from "lucide-react"
 
 async function getProducts() {
   // In a real app, this would fetch from your API
@@ -80,14 +82,6 @@ export default async function HomePage() {
                     Shop Now
                   </Button>
                 </Link>
-                <Link href="/about" passHref>
-                  <Button
-                    variant="outline"
-                    className="border-2 border-white text-white hover:bg-white hover:text-[#E99C1A] px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition-all duration-300"
-                  >
-                    Learn More
-                  </Button>
-                </Link>
               </div>
             </div>
             <div className="relative w-[400px] h-[400px] mt-8 md:mt-0">
@@ -134,49 +128,25 @@ export default async function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <Link href="/shop?category=Food" passHref>
                 <Card className="group flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer">
-                  <Image
-                    src="/placeholder.svg?height=100&width=100"
-                    alt="Food"
-                    width={100}
-                    height={100}
-                    className="mb-4 transition-transform duration-300 group-hover:scale-110"
-                  />
+                  <Utensils className="h-20 w-20 text-[#E99C1A] mb-4 transition-transform duration-300 group-hover:scale-110" />
                   <h3 className="text-xl font-semibold font-montserrat">Food</h3>
                 </Card>
               </Link>
               <Link href="/shop?category=Toys" passHref>
                 <Card className="group flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer">
-                  <Image
-                    src="/placeholder.svg?height=100&width=100"
-                    alt="Toys"
-                    width={100}
-                    height={100}
-                    className="mb-4 transition-transform duration-300 group-hover:scale-110"
-                  />
+                  <ToyBrick className="h-20 w-20 text-[#E99C1A] mb-4 transition-transform duration-300 group-hover:scale-110" />
                   <h3 className="text-xl font-semibold font-montserrat">Toys</h3>
                 </Card>
               </Link>
               <Link href="/shop?category=Grooming" passHref>
                 <Card className="group flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer">
-                  <Image
-                    src="/placeholder.svg?height=100&width=100"
-                    alt="Grooming"
-                    width={100}
-                    height={100}
-                    className="mb-4 transition-transform duration-300 group-hover:scale-110"
-                  />
+                  <Scissors className="h-20 w-20 text-[#E99C1A] mb-4 transition-transform duration-300 group-hover:scale-110" />
                   <h3 className="text-xl font-semibold font-montserrat">Grooming</h3>
                 </Card>
               </Link>
               <Link href="/shop?category=Accessories" passHref>
                 <Card className="group flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer">
-                  <Image
-                    src="/placeholder.svg?height=100&width=100"
-                    alt="Accessories"
-                    width={100}
-                    height={100}
-                    className="mb-4 transition-transform duration-300 group-hover:scale-110"
-                  />
+                  <Bone className="h-20 w-20 text-[#E99C1A] mb-4 transition-transform duration-300 group-hover:scale-110" />
                   <h3 className="text-xl font-semibold font-montserrat">Accessories</h3>
                 </Card>
               </Link>

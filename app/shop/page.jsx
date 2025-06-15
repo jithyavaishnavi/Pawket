@@ -5,102 +5,10 @@ import { Slider } from "@/components/ui/slider"
 import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
 import { Star } from "lucide-react"
-
-async function getProducts() {
-  // In a real app, this would fetch from your API
-  // For now, we'll use dummy data or a direct import if available
-  const products = [
-    {
-      _id: "1",
-      name: "Premium Dog Food - Chicken & Rice",
-      price: 29.99,
-      originalPrice: 39.99,
-      image: "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=400&h=400&fit=crop&crop=center",
-      category: "Food",
-      rating: 4.8,
-      reviews: 124,
-      inStock: true,
-    },
-    {
-      _id: "2",
-      name: "Interactive Cat Toy Set",
-      price: 19.99,
-      originalPrice: 24.99,
-      image: "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=400&h=400&fit=crop&crop=center",
-      category: "Toys",
-      rating: 4.6,
-      reviews: 89,
-      inStock: true,
-    },
-    {
-      _id: "3",
-      name: "Professional Pet Grooming Kit",
-      price: 49.99,
-      image: "https://images.unsplash.com/photo-1560807707-8cc77767d783?w=400&h=400&fit=crop&crop=center",
-      category: "Grooming",
-      rating: 4.9,
-      reviews: 156,
-      inStock: true,
-    },
-    {
-      _id: "4",
-      name: "Cozy Pet Bed - Large",
-      price: 39.99,
-      originalPrice: 59.99,
-      image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=400&fit=crop&crop=center",
-      category: "Accessories",
-      rating: 4.7,
-      reviews: 203,
-      inStock: true,
-    },
-    {
-      _id: "5",
-      name: "Natural Cat Treats",
-      price: 12.99,
-      image: "https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?w=400&h=400&fit=crop&crop=center",
-      category: "Food",
-      rating: 4.5,
-      reviews: 67,
-      inStock: true,
-    },
-    {
-      _id: "6",
-      name: "Dog Leash & Collar Set",
-      price: 24.99,
-      originalPrice: 34.99,
-      image: "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=400&h=400&fit=crop&crop=center",
-      category: "Accessories",
-      rating: 4.4,
-      reviews: 98,
-      inStock: false,
-    },
-    {
-      _id: "7",
-      name: "Cat Scratching Post",
-      price: 34.99,
-      image: "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=400&fit=crop&crop=center",
-      category: "Accessories",
-      rating: 4.6,
-      reviews: 145,
-      inStock: true,
-    },
-    {
-      _id: "8",
-      name: "Dog Chew Toys Bundle",
-      price: 16.99,
-      originalPrice: 22.99,
-      image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=400&fit=crop&crop=center",
-      category: "Toys",
-      rating: 4.3,
-      reviews: 78,
-      inStock: true,
-    },
-  ]
-  return products
-}
+import staticProducts from "@/lib/static-products"
 
 export default async function ShopPage() {
-  const products = await getProducts()
+  const products = staticProducts
 
   return (
     <div className="container mx-auto py-8 px-4 md:px-6">
