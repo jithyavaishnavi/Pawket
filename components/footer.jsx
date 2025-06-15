@@ -1,4 +1,3 @@
-// Reverted to original TypeScript content (with default export)
 "use client"
 
 import { Input } from "@/components/ui/input"

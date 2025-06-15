@@ -1,4 +1,3 @@
-// Reverted to original TypeScript content (with `imageUrl` and potential syntax error)
 "use client"
 
 import { useState, useEffect } from "react"
@@ -65,7 +64,7 @@ export default function ProductDetailPage() {
     return <div className="flex justify-center items-center h-screen text-xl">Product not found.</div>
   }
 
-  const getFallbackImage = (category: string) => {
+  const getFallbackImage = (category) => {
     switch (category) {
       case "Food":
         return "/placeholder.svg?height=400&width=400&text=Food+Product"
@@ -85,7 +84,7 @@ export default function ProductDetailPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         <div className="flex justify-center items-center bg-gray-100 rounded-lg p-8">
           <ImageWithFallback
-            src={product.imageUrl || "/placeholder.svg"} /* Changed from product.image to product.imageUrl */
+            src={product.image || "/placeholder.svg"}
             fallbackSrc={getFallbackImage(product.category)}
             alt={product.name}
             width={400}

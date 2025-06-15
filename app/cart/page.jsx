@@ -1,4 +1,3 @@
-// Reverted to original TypeScript content (with `cart` instead of `cartItems`)
 "use client"
 
 import { useCart } from "@/components/cart-context"
@@ -52,7 +51,7 @@ export default function CartPage() {
                       <TableRow key={item._id}>
                         <TableCell>
                           <Image
-                            src={item.imageUrl || "/placeholder.svg"}
+                            src={item.image || "/placeholder.svg"}
                             alt={item.name}
                             width={64}
                             height={64}

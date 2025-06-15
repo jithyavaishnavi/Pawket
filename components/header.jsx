@@ -1,6 +1,5 @@
-// Reverted to original TypeScript content (with default export)
 import Link from "next/link"
-import { ShoppingCart, Home } from "lucide-react" // Assuming these icons are used
+import { ShoppingCart, Home } from "lucide-react"
 
 export default function Header() {
   return (
